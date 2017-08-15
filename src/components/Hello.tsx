@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Button from 'antd/lib/button';
 
 export interface Props {
   name: string;
@@ -18,15 +19,14 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
       <div>
-        <button onClick={onDecrement}>-</button>
-        <button onClick={onIncrement}>+</button>
+        <Button type="primary" onClick={onDecrement}>-</Button>
+        <Button type="primary" onClick={onIncrement}>+</Button>
       </div>
     </div>
   );
 }
-export default Hello;
 
-// helpers
+export default Hello;
 
 function getExclamationMarks(numChars: number) {
   return Array(numChars + 1).join('!');
