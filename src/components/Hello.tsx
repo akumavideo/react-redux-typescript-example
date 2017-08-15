@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import Button from 'antd/lib/button';
 
-export interface Props {
+export interface Props extends RouteComponentProps<{}> {
   name: string;
   enthusiasmLevel?: number;
   onIncrement?: () => void;
