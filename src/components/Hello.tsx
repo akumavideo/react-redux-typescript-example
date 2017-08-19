@@ -7,9 +7,10 @@ export interface Props extends RouteComponentProps<{}> {
   enthusiasmLevel?: number;
   onIncrement?: () => void;
   onDecrement?: () => void;
+  toAnswersPage?: () => void;
 }
 
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement, toAnswersPage }: Props) {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -22,6 +23,7 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
       <div>
         <Button type="primary" onClick={onDecrement}>-</Button>
         <Button type="primary" onClick={onIncrement}>+</Button>
+        <Button type="primary" onClick={toAnswersPage}>To Answer Page</Button>
       </div>
     </div>
   );

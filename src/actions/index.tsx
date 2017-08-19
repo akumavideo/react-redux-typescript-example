@@ -8,7 +8,11 @@ export interface DecrementEnthusiasm {
   type: constants.DECREMENT_ENTHUSIASM;
 }
 
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
+export interface ToAnswersPage {
+  type: constants.TO_ANSWERS_PAGE;
+}
+
+export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | ToAnswersPage;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
   return {
@@ -19,5 +23,11 @@ export function incrementEnthusiasm(): IncrementEnthusiasm {
 export function decrementEnthusiasm(): DecrementEnthusiasm {
   return {
     type: constants.DECREMENT_ENTHUSIASM
+  };
+}
+
+export function toAnswersPage(): ToAnswersPage {
+  return {
+    type: constants.TO_ANSWERS_PAGE
   };
 }
